@@ -22,6 +22,8 @@ public class InicioSesion {
             contraseña=scanner.nextLine();
                if (usuario.equals("Esteban") && contraseña.equals("123")) {
                    resp = true;
+               } else if (usuario.equals("Sergio") && contraseña.equals("666")){
+                   resp = true;
                } else {
                    resp = false;
                }

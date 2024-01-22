@@ -21,26 +21,27 @@ public class SistemaDeGestionDePuerto {
                     System.out.println("Ingresar una opción: ");
                     opcion = scanner.nextInt();
                     switch (opcion) {
-                        case 1:
-                            System.out.println("Opción 1");
-                            break;
-                        case 2:
+                        case 1 -> System.out.println("Opción 1");
+                        case 2 -> {
                             System.out.println("Opción 2");
-                            break;
-                        case 3:
-                            System.out.println("Opción 3");
-                            break;
-                        case 4:
-                            System.out.println("Opción 4");
-                            break;
-                        case 5:
-                            System.out.println("Opción 5");
-                            break;
-                        case 6:
-                            System.out.println("Cerrando sesión. ¡Hasta luego, " + inicioSesion.getUsuario() + "!");
-                            break;
-                        default:
-                            System.out.println("Opción Incorrecta, intente de nuevo");
+                            
+                            Cargas p = new Cargas();
+                            System.out.println("Ingrese el codigo del propietario: ");
+                            p.setCodigoPropietario(scanner.nextLine());
+                            
+                            System.out.println("Usted ingreso el codigo: "+ p.getCodigoPropietario());
+                            
+                            System.out.println("Ingrese Numero de Serie: ");
+                            p.setNumSerie(scanner.nextLine());
+                            
+                            System.out.println("Ingrese la altura: ");
+                            p.setAltura(scanner.nextLine());
+                        }
+                        case 3 -> System.out.println("Opción 3");
+                        case 4 -> System.out.println("Opción 4");
+                        case 5 -> System.out.println("Opción 5");
+                        case 6 -> System.out.println("Cerrando sesión. ¡Hasta luego, " + inicioSesion.getUsuario() + "!");
+                        default -> System.out.println("Opción Incorrecta, intente de nuevo");
                     }
                 } while (opcion != 6);
             } else {
