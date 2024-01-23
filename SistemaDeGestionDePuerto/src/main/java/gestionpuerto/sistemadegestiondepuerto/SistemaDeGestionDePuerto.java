@@ -20,11 +20,12 @@ public class SistemaDeGestionDePuerto {
                     mostrarMenu();
                     System.out.println("Ingresar una opción: ");
                     opcion = scanner.nextInt();
+                    scanner.nextLine();
                     switch (opcion) {
                         case 1 -> System.out.println("Opción 1");
                         case 2 -> {
-                            System.out.println("Opción 2");
                             
+                            System.out.println("Opción 2");                        
                             Cargas p = new Cargas();
                             System.out.println("Ingrese el codigo del propietario: ");
                             p.setCodigoPropietario(scanner.nextLine());
