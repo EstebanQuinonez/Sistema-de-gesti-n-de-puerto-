@@ -35,5 +35,4 @@ public class InicioSesion {
         return usuario;
     }
  
-    
 }

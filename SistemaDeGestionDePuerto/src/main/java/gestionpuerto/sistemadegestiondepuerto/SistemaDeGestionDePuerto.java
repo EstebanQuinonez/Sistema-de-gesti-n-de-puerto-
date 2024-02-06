@@ -29,14 +29,15 @@ public class SistemaDeGestionDePuerto {
                             Cargas p = new Cargas();
                             System.out.println("Ingrese el codigo del propietario: ");
                             p.setCodigoPropietario(scanner.nextLine());
-                            
                             System.out.println("Usted ingreso el codigo: "+ p.getCodigoPropietario());
                             
                             System.out.println("Ingrese Numero de Serie: ");
                             p.setNumSerie(scanner.nextLine());
+                            System.out.println("El numero de serie ingresado: "+ p.getNumSerie());
                             
                             System.out.println("Ingrese la altura: ");
                             p.setAltura(scanner.nextLine());
+                            System.out.println("La altura ingresada es: "+ p.getAltura());
                         }
                         case 3 -> System.out.println("Opción 3");
                         case 4 -> System.out.println("Opción 4");
