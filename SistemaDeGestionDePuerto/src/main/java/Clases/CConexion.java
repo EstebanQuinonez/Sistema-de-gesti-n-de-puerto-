@@ -16,10 +16,10 @@ public class CConexion {
     Connection conectar;
     
     String usuario = "root";
-    String contraseña = "GHMySQL22.11";
+    String contraseña = "123456";
     String bd = "SistemaDeGestionDePuerto";
     String ip = "localhost";
-    String puerto = "3307";
+    String puerto = "3306";
     
     String cadena = "jdbc:mysql://" + ip + ":" + puerto + "/" + bd;
     
