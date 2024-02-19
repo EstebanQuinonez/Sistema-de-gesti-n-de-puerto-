@@ -4,6 +4,8 @@
  */
 package com.mycompany.sistemadegestiondepuerto;
 
+import VentanasAdmin.Visual;
+
 /**
  *
  * @author villa
@@ -29,16 +31,43 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Administrador Sistema");
 
-        jMenu1.setText("File");
+        jMenu1.setText("Inicio");
+
+        jMenuItem5.setText("Cerrar");
+        jMenu1.add(jMenuItem5);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Usuarios");
+
+        jMenuItem1.setText("Visualizar Usuarios");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("jMenuItem2");
+        jMenu2.add(jMenuItem2);
+
+        jMenuItem3.setText("jMenuItem3");
+        jMenu2.add(jMenuItem3);
+
+        jMenuItem4.setText("jMenuItem4");
+        jMenu2.add(jMenuItem4);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -48,20 +77,25 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(740, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(513, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Visual v = new Visual();
+        v.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,5 +137,10 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }
