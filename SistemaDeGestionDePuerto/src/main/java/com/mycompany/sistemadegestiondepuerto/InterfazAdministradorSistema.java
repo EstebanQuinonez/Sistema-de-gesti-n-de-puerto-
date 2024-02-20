@@ -4,6 +4,7 @@
  */
 package com.mycompany.sistemadegestiondepuerto;
 
+import VentanasAdmin.CrudUsuarios;
 import VentanasAdmin.Visual;
 
 /**
@@ -31,42 +32,49 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        CerrarVentana = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        VisualizarUsuarios = new javax.swing.JMenuItem();
+        crud = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Administrador Sistema");
 
         jMenu1.setText("Inicio");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem5.setText("Cerrar");
-        jMenu1.add(jMenuItem5);
+        CerrarVentana.setText("Cerrar");
+        CerrarVentana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CerrarVentanaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(CerrarVentana);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Usuarios");
 
-        jMenuItem1.setText("Visualizar Usuarios");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        VisualizarUsuarios.setText("Visualizar Usuarios");
+        VisualizarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                VisualizarUsuariosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jMenu2.add(VisualizarUsuarios);
 
-        jMenuItem2.setText("jMenuItem2");
-        jMenu2.add(jMenuItem2);
-
-        jMenuItem3.setText("jMenuItem3");
-        jMenu2.add(jMenuItem3);
-
-        jMenuItem4.setText("jMenuItem4");
-        jMenu2.add(jMenuItem4);
+        crud.setText("Gestion de Usuarios");
+        crud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crudActionPerformed(evt);
+            }
+        });
+        jMenu2.add(crud);
 
         jMenuBar1.add(jMenu2);
 
@@ -92,10 +100,23 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void VisualizarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarUsuariosActionPerformed
         Visual v = new Visual();
         v.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_VisualizarUsuariosActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        //
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void CerrarVentanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarVentanaActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_CerrarVentanaActionPerformed
+
+    private void crudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crudActionPerformed
+        CrudUsuarios d = new CrudUsuarios();
+        d.setVisible(true);
+    }//GEN-LAST:event_crudActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,14 +154,12 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem CerrarVentana;
+    private javax.swing.JMenuItem VisualizarUsuarios;
+    private javax.swing.JMenuItem crud;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }
