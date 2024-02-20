@@ -32,7 +32,7 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        CerrarVentana = new javax.swing.JMenuItem();
+        CerrarSesion = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         VisualizarUsuarios = new javax.swing.JMenuItem();
         crud = new javax.swing.JMenuItem();
@@ -48,13 +48,13 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
             }
         });
 
-        CerrarVentana.setText("Cerrar");
-        CerrarVentana.addActionListener(new java.awt.event.ActionListener() {
+        CerrarSesion.setText("Cerrar Sesión");
+        CerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CerrarVentanaActionPerformed(evt);
+                CerrarSesionActionPerformed(evt);
             }
         });
-        jMenu1.add(CerrarVentana);
+        jMenu1.add(CerrarSesion);
 
         jMenuBar1.add(jMenu1);
 
@@ -109,9 +109,11 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
         //
     }//GEN-LAST:event_jMenu1ActionPerformed
 
-    private void CerrarVentanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarVentanaActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_CerrarVentanaActionPerformed
+    private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
+       InterfazLogin login = new InterfazLogin();
+       login.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_CerrarSesionActionPerformed
 
     private void crudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crudActionPerformed
         CrudUsuarios d = new CrudUsuarios();
@@ -154,7 +156,7 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem CerrarVentana;
+    private javax.swing.JMenuItem CerrarSesion;
     private javax.swing.JMenuItem VisualizarUsuarios;
     private javax.swing.JMenuItem crud;
     private javax.swing.JLabel jLabel1;

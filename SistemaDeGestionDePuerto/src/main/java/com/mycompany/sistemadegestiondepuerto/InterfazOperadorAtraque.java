@@ -28,17 +28,40 @@ public class InterfazOperadorAtraque extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        Inicio = new javax.swing.JMenu();
+        CerrarSesion = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        VerInfoBarco = new javax.swing.JMenuItem();
+        AsignarMuelle = new javax.swing.JMenuItem();
+        VerMuelleDispo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Operador Atraque");
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        Inicio.setText("Inicio");
 
-        jMenu2.setText("Edit");
+        CerrarSesion.setText("Cerrar Sesión");
+        CerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CerrarSesionActionPerformed(evt);
+            }
+        });
+        Inicio.add(CerrarSesion);
+
+        jMenuBar1.add(Inicio);
+
+        jMenu2.setText("Operaciones");
+
+        VerInfoBarco.setText("Visualizar informacion de barco");
+        jMenu2.add(VerInfoBarco);
+
+        AsignarMuelle.setText("Asignar Muelle");
+        jMenu2.add(AsignarMuelle);
+
+        VerMuelleDispo.setText("Visualizar disponibilidad de muelle");
+        jMenu2.add(VerMuelleDispo);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -48,20 +71,26 @@ public class InterfazOperadorAtraque extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addContainerGap(492, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(95, 95, 95)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel1)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
+       InterfazLogin login = new InterfazLogin();
+       login.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_CerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,8 +128,12 @@ public class InterfazOperadorAtraque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AsignarMuelle;
+    private javax.swing.JMenuItem CerrarSesion;
+    private javax.swing.JMenu Inicio;
+    private javax.swing.JMenuItem VerInfoBarco;
+    private javax.swing.JMenuItem VerMuelleDispo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
