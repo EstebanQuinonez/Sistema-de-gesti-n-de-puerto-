@@ -6,6 +6,7 @@ package VentanasAdmin;
 
 import Clases.CConexion;
 import com.mycompany.sistemadegestiondepuerto.InterfazAdministradorSistema;
+import com.mycompany.sistemadegestiondepuerto.InterfazLogin;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -76,6 +77,7 @@ public class Visual extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         visor = new javax.swing.JTable();
         usuarios = new javax.swing.JButton();
+        regresaraInterfazAdmin = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +102,13 @@ public class Visual extends javax.swing.JFrame {
             }
         });
 
+        regresaraInterfazAdmin.setText("volver");
+        regresaraInterfazAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresaraInterfazAdminActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,7 +120,10 @@ public class Visual extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(311, 311, 311)
-                        .addComponent(usuarios)))
+                        .addComponent(usuarios))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(294, 294, 294)
+                        .addComponent(regresaraInterfazAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(295, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -121,7 +133,9 @@ public class Visual extends javax.swing.JFrame {
                 .addComponent(usuarios)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(regresaraInterfazAdmin)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,6 +144,12 @@ public class Visual extends javax.swing.JFrame {
     private void usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosActionPerformed
         mostrar("usuario");
     }//GEN-LAST:event_usuariosActionPerformed
+
+    private void regresaraInterfazAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresaraInterfazAdminActionPerformed
+       InterfazAdministradorSistema login  = new InterfazAdministradorSistema();
+       login.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_regresaraInterfazAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +188,7 @@ public class Visual extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToggleButton regresaraInterfazAdmin;
     public javax.swing.JButton usuarios;
     public javax.swing.JTable visor;
     // End of variables declaration//GEN-END:variables

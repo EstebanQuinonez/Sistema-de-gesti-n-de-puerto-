@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.sistemadegestiondepuerto;
 
 import VentanasAdmin.Visual;
@@ -31,9 +27,9 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        CerrarSesion = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        verUsuarios = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -44,20 +40,25 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
 
         jMenu1.setText("Inicio");
 
-        jMenuItem5.setText("Cerrar");
-        jMenu1.add(jMenuItem5);
+        CerrarSesion.setText("Cerrar Sesión");
+        CerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CerrarSesionActionPerformed(evt);
+            }
+        });
+        jMenu1.add(CerrarSesion);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Usuarios");
 
-        jMenuItem1.setText("Visualizar Usuarios");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        verUsuarios.setText("Visualizar Usuarios");
+        verUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                verUsuariosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jMenu2.add(verUsuarios);
 
         jMenuItem2.setText("jMenuItem2");
         jMenu2.add(jMenuItem2);
@@ -92,10 +93,17 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void verUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verUsuariosActionPerformed
         Visual v = new Visual();
         v.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_verUsuariosActionPerformed
+
+    private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
+       InterfazLogin login  = new InterfazLogin();
+       login.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_CerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,14 +141,14 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem CerrarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem verUsuarios;
     // End of variables declaration//GEN-END:variables
 }
