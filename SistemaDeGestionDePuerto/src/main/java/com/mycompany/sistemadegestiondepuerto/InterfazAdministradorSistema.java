@@ -103,6 +103,7 @@ public class InterfazAdministradorSistema extends javax.swing.JFrame {
     private void VisualizarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarUsuariosActionPerformed
         Visual v = new Visual();
         v.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_VisualizarUsuariosActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed

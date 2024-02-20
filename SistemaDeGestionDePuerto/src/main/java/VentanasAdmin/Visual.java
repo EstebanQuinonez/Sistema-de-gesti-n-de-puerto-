@@ -6,6 +6,7 @@ package VentanasAdmin;
 
 import Clases.CConexion;
 import com.mycompany.sistemadegestiondepuerto.InterfazAdministradorSistema;
+import com.mycompany.sistemadegestiondepuerto.InterfazLogin;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -76,7 +77,7 @@ public class Visual extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         visor = new javax.swing.JTable();
         usuarios = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,10 +102,10 @@ public class Visual extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
 
@@ -122,7 +123,7 @@ public class Visual extends javax.swing.JFrame {
                         .addComponent(usuarios))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(397, 397, 397)
-                        .addComponent(jButton1)))
+                        .addComponent(Salir)))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -133,7 +134,7 @@ public class Visual extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(Salir)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -144,9 +145,11 @@ public class Visual extends javax.swing.JFrame {
         mostrar("usuario");
     }//GEN-LAST:event_usuariosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+       InterfazAdministradorSistema salir = new InterfazAdministradorSistema();
+       salir.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,7 +187,7 @@ public class Visual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Salir;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton usuarios;
     public javax.swing.JTable visor;
