@@ -4,17 +4,86 @@
  */
 package com.mycompany.sistemadegestiondepuerto;
 
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author villa
  */
 public class InterfazOperadorEmbarque extends javax.swing.JFrame {
-
+    
+    private JMenuItem inicio;
+    private JMenuItem barco;
+    private JMenuItem almacen;
+    private JMenuItem registros;
+    private JMenuItem cerrar_sesion;
+    
     /**
      * Creates new form InterfazOperadorEmbarque
      */
     public InterfazOperadorEmbarque() {
         initComponents();
+        
+        inicio = new JMenuItem("Inicio");
+        barco = new JMenuItem("Barco");
+        almacen = new JMenuItem("Almacen");
+        registros = new JMenuItem("Registros");
+        cerrar_sesion = new JMenuItem("Cerrar Sesion");
+        
+        Menu.add(inicio);
+        Menu.add(barco);
+        Menu.add(almacen);
+        Menu.add(registros);
+        Menu.add(cerrar_sesion);
+        
+        inicio.addActionListener(((e) -> {
+            cambiarVista(PanelInicio);
+        }));
+        
+        barco.addActionListener(((e) -> {
+            cambiarVista(PanelBarcos);
+        }));
+        
+        almacen.addActionListener(((e) -> {
+            cambiarVista(PanelAlmacen);
+        }));
+        
+        registros.addActionListener(((e) -> {
+            cambiarVista(PanelRegistros);
+        }));
+        
+        cerrar_sesion.addActionListener(((e) -> {
+            InterfazLogin login = new InterfazLogin();
+            login.setVisible(true);
+            this.dispose();
+        }));
+    }
+    
+    private void cambiarVista(JPanel jpanel){
+        jpanel.setSize(PanelPrincipal.getWidth(), PanelPrincipal.getHeight());
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(jpanel);
+        PanelPrincipal.repaint();
+        
+        activarVista(jpanel);
+    }
+    
+    private void activarVista(JPanel jpanel){
+        PanelInicio.setEnabled(false);
+        PanelInicio.setVisible(false);
+        
+        PanelBarcos.setEnabled(false);
+        PanelBarcos.setVisible(false);
+        
+        PanelAlmacen.setEnabled(false);
+        PanelAlmacen.setVisible(false);
+        
+        PanelRegistros.setEnabled(false);
+        PanelRegistros.setVisible(false);
+        
+        jpanel.setEnabled(true);
+        jpanel.setVisible(true);
     }
 
     /**
@@ -26,38 +95,147 @@ public class InterfazOperadorEmbarque extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelPrincipal = new javax.swing.JPanel();
+        PanelInicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        PanelBarcos = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        PanelAlmacen = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        PanelRegistros = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        Menu = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Operador Embarque");
+        jLabel1.setText("Inicio");
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        javax.swing.GroupLayout PanelInicioLayout = new javax.swing.GroupLayout(PanelInicio);
+        PanelInicio.setLayout(PanelInicioLayout);
+        PanelInicioLayout.setHorizontalGroup(
+            PanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelInicioLayout.createSequentialGroup()
+                .addGap(328, 328, 328)
+                .addComponent(jLabel1)
+                .addContainerGap(397, Short.MAX_VALUE))
+        );
+        PanelInicioLayout.setVerticalGroup(
+            PanelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelInicioLayout.createSequentialGroup()
+                .addGap(187, 187, 187)
+                .addComponent(jLabel1)
+                .addContainerGap(266, Short.MAX_VALUE))
+        );
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jLabel2.setText("Barcos");
 
-        setJMenuBar(jMenuBar1);
+        javax.swing.GroupLayout PanelBarcosLayout = new javax.swing.GroupLayout(PanelBarcos);
+        PanelBarcos.setLayout(PanelBarcosLayout);
+        PanelBarcosLayout.setHorizontalGroup(
+            PanelBarcosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBarcosLayout.createSequentialGroup()
+                .addGap(347, 347, 347)
+                .addComponent(jLabel2)
+                .addContainerGap(356, Short.MAX_VALUE))
+        );
+        PanelBarcosLayout.setVerticalGroup(
+            PanelBarcosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBarcosLayout.createSequentialGroup()
+                .addGap(218, 218, 218)
+                .addComponent(jLabel2)
+                .addContainerGap(223, Short.MAX_VALUE))
+        );
+
+        jLabel3.setText("Almacen");
+
+        javax.swing.GroupLayout PanelAlmacenLayout = new javax.swing.GroupLayout(PanelAlmacen);
+        PanelAlmacen.setLayout(PanelAlmacenLayout);
+        PanelAlmacenLayout.setHorizontalGroup(
+            PanelAlmacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAlmacenLayout.createSequentialGroup()
+                .addGap(321, 321, 321)
+                .addComponent(jLabel3)
+                .addContainerGap(373, Short.MAX_VALUE))
+        );
+        PanelAlmacenLayout.setVerticalGroup(
+            PanelAlmacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAlmacenLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(jLabel3)
+                .addContainerGap(234, Short.MAX_VALUE))
+        );
+
+        jLabel4.setText("Registros");
+
+        javax.swing.GroupLayout PanelRegistrosLayout = new javax.swing.GroupLayout(PanelRegistros);
+        PanelRegistros.setLayout(PanelRegistrosLayout);
+        PanelRegistrosLayout.setHorizontalGroup(
+            PanelRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegistrosLayout.createSequentialGroup()
+                .addGap(346, 346, 346)
+                .addComponent(jLabel4)
+                .addContainerGap(354, Short.MAX_VALUE))
+        );
+        PanelRegistrosLayout.setVerticalGroup(
+            PanelRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegistrosLayout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(jLabel4)
+                .addContainerGap(229, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
+        PanelPrincipal.setLayout(PanelPrincipalLayout);
+        PanelPrincipalLayout.setHorizontalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelBarcos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelAlmacen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelRegistros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        PanelPrincipalLayout.setVerticalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelBarcos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelAlmacen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelRegistros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel1)
-                .addContainerGap(212, Short.MAX_VALUE))
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel1)
-                .addContainerGap(157, Short.MAX_VALUE))
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -99,9 +277,15 @@ public class InterfazOperadorEmbarque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar Menu;
+    private javax.swing.JPanel PanelAlmacen;
+    private javax.swing.JPanel PanelBarcos;
+    private javax.swing.JPanel PanelInicio;
+    private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JPanel PanelRegistros;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
