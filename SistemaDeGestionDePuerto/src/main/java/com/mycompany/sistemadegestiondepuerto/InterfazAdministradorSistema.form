@@ -8,13 +8,24 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Inicio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu1ActionPerformed"/>
+          </Events>
           <SubComponents>
+<<<<<<< HEAD
             <MenuItem class="javax.swing.JMenuItem" name="CerrarSesion">
+=======
+            <MenuItem class="javax.swing.JMenuItem" name="CerrarVentana">
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar Sesi&#xf3;n"/>
               </Properties>
               <Events>
+<<<<<<< HEAD
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CerrarSesionActionPerformed"/>
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CerrarVentanaActionPerformed"/>
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
               </Events>
             </MenuItem>
           </SubComponents>
@@ -24,28 +35,29 @@
             <Property name="text" type="java.lang.String" value="Usuarios"/>
           </Properties>
           <SubComponents>
+<<<<<<< HEAD
             <MenuItem class="javax.swing.JMenuItem" name="verUsuarios">
+=======
+            <MenuItem class="javax.swing.JMenuItem" name="VisualizarUsuarios">
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
               <Properties>
                 <Property name="text" type="java.lang.String" value="Visualizar Usuarios"/>
               </Properties>
               <Events>
+<<<<<<< HEAD
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verUsuariosActionPerformed"/>
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VisualizarUsuariosActionPerformed"/>
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="crud">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jMenuItem2"/>
+                <Property name="text" type="java.lang.String" value="Gestion de Usuarios"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jMenuItem3"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jMenuItem4"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crudActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

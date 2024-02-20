@@ -77,7 +77,11 @@ public class Visual extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         visor = new javax.swing.JTable();
         usuarios = new javax.swing.JButton();
+<<<<<<< HEAD
         regresaraInterfazAdmin = new javax.swing.JToggleButton();
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,10 +106,17 @@ public class Visual extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         regresaraInterfazAdmin.setText("volver");
         regresaraInterfazAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 regresaraInterfazAdminActionPerformed(evt);
+=======
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
             }
         });
 
@@ -116,15 +127,24 @@ public class Visual extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(311, 311, 311)
                         .addComponent(usuarios))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(294, 294, 294)
                         .addComponent(regresaraInterfazAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(295, Short.MAX_VALUE))
+=======
+                        .addGap(386, 386, 386)
+                        .addComponent(usuarios))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(397, 397, 397)
+                        .addComponent(jButton1)))
+                .addContainerGap(55, Short.MAX_VALUE))
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,9 +153,15 @@ public class Visual extends javax.swing.JFrame {
                 .addComponent(usuarios)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(regresaraInterfazAdmin)
                 .addContainerGap(7, Short.MAX_VALUE))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(13, Short.MAX_VALUE))
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
         );
 
         pack();
@@ -145,11 +171,17 @@ public class Visual extends javax.swing.JFrame {
         mostrar("usuario");
     }//GEN-LAST:event_usuariosActionPerformed
 
+<<<<<<< HEAD
     private void regresaraInterfazAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresaraInterfazAdminActionPerformed
        InterfazAdministradorSistema login  = new InterfazAdministradorSistema();
        login.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_regresaraInterfazAdminActionPerformed
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
+>>>>>>> 08712da71d81fba46d6d16a28ed25ee8a7c0f9fd
 
     /**
      * @param args the command line arguments
@@ -187,6 +219,7 @@ public class Visual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton regresaraInterfazAdmin;
     public javax.swing.JButton usuarios;
