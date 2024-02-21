@@ -12,6 +12,9 @@ public class SistemaDeGestionDePuerto {
 
     public static void main(String[] args) {
         InterfazLogin objetoLogin = new InterfazLogin();
+        objetoLogin.setLocationRelativeTo(null);
+        objetoLogin.setSize(800,500);
         objetoLogin.setVisible(true);
+        
     }
 }

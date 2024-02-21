@@ -38,18 +38,26 @@ public class CLogin {
                switch(tipoUsuario){
                    case "OperadorAtraque":
                        InterfazOperadorAtraque interfazAtraque = new InterfazOperadorAtraque();
+                       interfazAtraque.setLocationRelativeTo(null);
+                       interfazAtraque.setSize(1000,600);
                        interfazAtraque.setVisible(true);
                        break;
                    case "OperadorEmbarque":
                        InterfazOperadorEmbarque interfazEmbarque = new InterfazOperadorEmbarque();
+                       interfazEmbarque.setLocationRelativeTo(null);
+                       interfazEmbarque.setSize(1000,600);
                        interfazEmbarque.setVisible(true);
                        break;
                    case "OperadorAlmacenamiento":
                        InterfazOperadorAlmacenamiento interfazAlmacenamiento = new InterfazOperadorAlmacenamiento();
+                       interfazAlmacenamiento.setLocationRelativeTo(null);
+                       interfazAlmacenamiento.setSize(1000,600);
                        interfazAlmacenamiento.setVisible(true);
                        break;
                    case "AdministradorSistema":
                        InterfazAdministradorSistema interfazAdmin = new InterfazAdministradorSistema();
+                       interfazAdmin.setLocationRelativeTo(null);
+                       interfazAdmin.setSize(1000,600);
                        interfazAdmin.setVisible(true);
                        break;
                }

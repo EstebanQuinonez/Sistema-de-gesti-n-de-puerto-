@@ -4,6 +4,8 @@
  */
 package com.mycompany.sistemadegestiondepuerto;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author villa
@@ -14,7 +16,7 @@ public class InterfazLogin extends javax.swing.JFrame {
      * Creates new form InterfazLogin
      */
     public InterfazLogin() {
-        initComponents();
+        initComponents();       
     }
 
     /**

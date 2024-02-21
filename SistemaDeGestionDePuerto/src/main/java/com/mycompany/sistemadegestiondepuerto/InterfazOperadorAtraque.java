@@ -88,6 +88,8 @@ public class InterfazOperadorAtraque extends javax.swing.JFrame {
 
     private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
        InterfazLogin login = new InterfazLogin();
+       login.setLocationRelativeTo(null);
+       login.setSize(800,500);
        login.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_CerrarSesionActionPerformed
