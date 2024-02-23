@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Scanner;
+import CRUDusuarios.CRUDadmin;
 
 public class Usuario {
     int idUsuario;
@@ -192,6 +193,8 @@ public class Usuario {
             switch (opcion) {
                 case 1:
                     System.out.println("Gestionar usuarios");
+                    CRUDadmin c = new CRUDadmin();
+                    c.setVisible(true);
                     break;
                 case 2:
                     System.out.println("Registrar barco");
