@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 package com.mycompany.sistemadegestiondepuerto;
 
-/**
- *
- * @author villa
- */
+import Clases.Usuario;
+
 public class SistemaDeGestionDePuerto {
 
     public static void main(String[] args) {
-        InterfazLogin objetoLogin = new InterfazLogin();
-        objetoLogin.setLocationRelativeTo(null);
-        objetoLogin.setSize(800,500);
-        objetoLogin.setVisible(true);
-        
+       Usuario user = new Usuario();      
+        user.iniciarPrograma();      
     }
 }
