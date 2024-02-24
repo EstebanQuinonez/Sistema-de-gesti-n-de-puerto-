@@ -1,8 +1,11 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package VentanasAdmin;
 
-package CRUDusuarios;
-
-import Clases.Usuario;
-import Conexion.Conexion;
+import Clases.CConexion;
+import com.mycompany.sistemadegestiondepuerto.InterfazAdministradorSistema;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,22 +18,20 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author SERGIO
  */
-public class CRUDadmin extends javax.swing.JFrame {
+public class CRUDusuario extends javax.swing.JFrame {
     
-    Conexion con = new Conexion();
-    Connection conectar = con.estableceConexion();
-
-
+    CConexion con=new CConexion();
+    Connection CConexion=con.estableceConexion();
 
     /**
-     * Creates new form CRUDadmin
+     * Creates new form CRUDusuario
      */
-    public CRUDadmin() {
+    public CRUDusuario() {
         initComponents();
         mostrardatos();
     }
 
-    public CRUDadmin(Usuario aThis, boolean b) {
+    public CRUDusuario(InterfazAdministradorSistema aThis, boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -54,9 +55,12 @@ public class CRUDadmin extends javax.swing.JFrame {
         combotipo = new javax.swing.JComboBox<>();
         btnregistrar = new javax.swing.JButton();
         btnactualizar = new javax.swing.JButton();
+        btnsalir = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtabledatos = new javax.swing.JTable();
+
+        jPopupMenu1.setComponentPopupMenu(jPopupMenu1);
 
         jMenuItem1.setText("Eliminar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -67,50 +71,45 @@ public class CRUDadmin extends javax.swing.JFrame {
         jPopupMenu1.add(jMenuItem1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PANEL DE CONTROL");
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "GESTION DE USUARIOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "GESTION DE USUARIOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setMinimumSize(new java.awt.Dimension(1200, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1200, 600));
 
-        jPanel2.setBackground(new java.awt.Color(35, 96, 157));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingresar Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel2MouseClicked(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INGRESAR DATOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        txtid.setBorder(javax.swing.BorderFactory.createTitledBorder("ID"));
+        txtid.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        txtnombre.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre"));
-        txtnombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnombreActionPerformed(evt);
-            }
-        });
+        txtnombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NOMBRE", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        txtapellido.setBorder(javax.swing.BorderFactory.createTitledBorder("Apellido"));
-        txtapellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtapellidoActionPerformed(evt);
-            }
-        });
+        txtapellido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "APELLIDO", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        txtcontrasenia.setBorder(javax.swing.BorderFactory.createTitledBorder("Contraseña"));
+        txtcontrasenia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONTRASEÑA", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        combotipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "OperadorAtraque", "OperadorEmbarque", "OperadorAlmacenamiento", "AdministradorSistema" }));
-        combotipo.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo de Usuario"));
+        combotipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccionar-", "OperadorAtraque", "OperadorEmbarque", "OperadorAlmacenamiento", "AdministradorSistema" }));
+        combotipo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "TIPO DE USUARIO", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
 
-        btnregistrar.setText("Registrar");
+        btnregistrar.setText("REGISTRAR");
         btnregistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnregistrarActionPerformed(evt);
             }
         });
 
-        btnactualizar.setText("Actualizar");
+        btnactualizar.setText("ACTUALIZAR");
         btnactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnactualizarActionPerformed(evt);
+            }
+        });
+
+        btnsalir.setText("SALIR");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
             }
         });
 
@@ -119,25 +118,24 @@ public class CRUDadmin extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnregistrar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnactualizar))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtapellido)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnactualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(combotipo, 0, 200, Short.MAX_VALUE)
+                        .addComponent(txtid, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtnombre)
-                        .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtapellido)
                         .addComponent(txtcontrasenia)
-                        .addComponent(combotipo, 0, 211, Short.MAX_VALUE)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                        .addComponent(btnregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(txtid)
                 .addGap(18, 18, 18)
                 .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -145,16 +143,18 @@ public class CRUDadmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(txtcontrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(combotipo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(combotipo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnregistrar)
-                    .addComponent(btnactualizar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnactualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
         );
 
-        jPanel3.setBackground(new java.awt.Color(10, 50, 76));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LISTA", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel3MouseClicked(evt);
@@ -186,15 +186,15 @@ public class CRUDadmin extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -202,17 +202,19 @@ public class CRUDadmin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -220,27 +222,25 @@ public class CRUDadmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnombreActionPerformed
-
-    private void txtapellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtapellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtapellidoActionPerformed
-
     private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
         try{
-            PreparedStatement ps=conectar.prepareStatement("INSERT INTO usuario(TipoDeUsuario,idUsuario,NombreUsuario,ApellidoUsuario,Contraseña) VALUES(?,?,?,?,?)");
+            PreparedStatement ps=CConexion.prepareStatement("INSERT INTO usuario(TipoDeUsuario,idUsuario,NombreUsuario,ApellidoUsuario,Contraseña) VALUES(?,?,?,?,?)");
             ps.setString(1, combotipo.getSelectedItem().toString());
             ps.setString(2, txtid.getText());
             ps.setString(3, txtnombre.getText());
@@ -269,7 +269,7 @@ public class CRUDadmin extends javax.swing.JFrame {
 
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
         try{
-            PreparedStatement ps=conectar.prepareStatement
+            PreparedStatement ps=CConexion.prepareStatement
         ("Update usuario set TipoDeUsuario='"+combotipo.getSelectedItem()+"',NombreUsuario='"+txtnombre.getText()+"',ApellidoUsuario='"+txtapellido.getText()+"',Contraseña='"+txtcontrasenia.getText()+"' where idUsuario='"+txtid.getText()+"'");
             int indice=ps.executeUpdate();
             
@@ -285,10 +285,6 @@ public class CRUDadmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnactualizarActionPerformed
 
-    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel2MouseClicked
-
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
         btnactualizar.setEnabled(false);
         btnregistrar.setEnabled(true);
@@ -298,7 +294,7 @@ public class CRUDadmin extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         if(JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar usuario","Salir",JOptionPane.YES_NO_CANCEL_OPTION)==0){
         try{
-            PreparedStatement ps=conectar.prepareStatement("DELETE FROM usuario where idUsuario='"+txtid.getText()+"'");
+            PreparedStatement ps=CConexion.prepareStatement("DELETE FROM usuario where idUsuario='"+txtid.getText()+"'");
         int indice=ps.executeUpdate();
         if(indice>0){
             mostrardatos();
@@ -310,6 +306,12 @@ public class CRUDadmin extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        InterfazAdministradorSistema salir = new InterfazAdministradorSistema();
+        salir.setVisible(true);
+        this.dispose();  
+    }//GEN-LAST:event_btnsalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -328,32 +330,28 @@ public class CRUDadmin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CRUDadmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDusuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CRUDadmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDusuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CRUDadmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDusuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CRUDadmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRUDusuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CRUDadmin().setVisible(true);
+                new CRUDusuario().setVisible(true);
             }
         });
     }
 
-    public CRUDadmin(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnactualizar;
     private javax.swing.JButton btnregistrar;
+    private javax.swing.JButton btnsalir;
     private javax.swing.JComboBox<String> combotipo;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
@@ -381,7 +379,7 @@ public class CRUDadmin extends javax.swing.JFrame {
         
         Statement st;
         try{
-            st=conectar.createStatement();
+            st=CConexion.createStatement();
             ResultSet rs=st.executeQuery(consultasql);
             while(rs.next()){
                 data[0]=rs.getString(1);
